@@ -25,8 +25,8 @@ public class LoginActivity extends ActionBarActivity {
 
         String usuarioInformado = usuario.getText().toString();
         String senhaInformada = senha.getText().toString();
-        if("leitor".equals(usuarioInformado) &&
-                "123".equals(senhaInformada)) {
+        if("".equals(usuarioInformado) &&
+                "".equals(senhaInformada)) {
 
             startActivity(new Intent(this, DashboardActivity.class));
 

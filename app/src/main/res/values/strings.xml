@@ -9,4 +9,8 @@
     <string name="entrar">Entrar</string>
     <string name="erro_autenticacao">Erro de autenticação</string>
     <string name="dashboard">Dashboard</string>
+    <string name="novo_gasto">Novo Gasto</string>
+    <string name="nova_viagem">Nova Viagem</string>
+    <string name="minhas_viagens">Minhas Viagens</string>
+    <string name="configuracoes">Configurações</string>
 </resources>
