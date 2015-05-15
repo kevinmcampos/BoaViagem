@@ -28,6 +28,14 @@
             android:name=".GastoActivity"
             android:label="@string/dashboard" >
         </activity>
+        <activity
+            android:name=".ViagemListActivity"
+            android:label="@string/dashboard" >
+        </activity>
+        <activity
+            android:name=".GastoListActivity"
+            android:label="@string/dashboard" >
+        </activity>
     </application>
 
 </manifest>
