@@ -36,6 +36,9 @@
             android:name=".GastoListActivity"
             android:label="@string/dashboard" >
         </activity>
+        <activity android:name=".ConfiguracoesActivity"
+            android:label="@string/configuracoes" >
+        </activity>
     </application>
 
 </manifest>
