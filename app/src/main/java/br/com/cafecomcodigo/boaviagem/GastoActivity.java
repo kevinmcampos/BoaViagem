@@ -1,9 +1,11 @@
 package br.com.cafecomcodigo.boaviagem;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -12,7 +14,7 @@ import android.widget.Spinner;
 
 import java.util.Calendar;
 
-public class GastoActivity extends Activity {
+public class GastoActivity extends ActionBarActivity {
 
     private Spinner categoria;
     private Button dataGasto;
@@ -35,6 +37,17 @@ public class GastoActivity extends Activity {
                 android.R.layout.simple_spinner_item);
         categoria = (Spinner) findViewById(R.id.categoria);
         categoria.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_gasto, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
     }
 
     // TODO Utilizar DialogFragment com FragmentManager
