@@ -32,6 +32,12 @@
     <string name="action_leave">Sair</string>
     <string name="remover_viagem">Remover Viagem</string>
     <string name="remover_gasto">Remover Gasto</string>
+    <string name="editar_viagem">Editar Viagem</string>
+    <string name="lista_gastos">Lista Gastos</string>
+    <string name="opcoes">Opções</string>
+    <string name="confirmacao_exclusao_viagem">Deseja excluir viagem?</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
 
     <string-array name="categoria_gasto">
         <item>Alimentação</item>

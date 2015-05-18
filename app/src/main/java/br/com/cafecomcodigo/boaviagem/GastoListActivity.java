@@ -2,7 +2,6 @@ package br.com.cafecomcodigo.boaviagem;
 
 import android.app.ListActivity;
 import android.os.Bundle;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +31,8 @@ public class GastoListActivity extends ListActivity implements AdapterView.OnIte
         adapter.setViewBinder(new GastoViewBinder());
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
+
+        registerForContextMenu(getListView());
     }
 
     @Override
@@ -43,7 +44,7 @@ public class GastoListActivity extends ListActivity implements AdapterView.OnIte
     public boolean onContextItemSelected(MenuItem item) {
 
         if (item.getItemId() == R.id.remover_gasto) {
-            AdapterViewCompat.AdapterContextMenuInfo info = (AdapterViewCompat.AdapterContextMenuInfo) item
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
                     .getMenuInfo();
             gastos.remove(info.position);
             getListView().invalidateViews();
