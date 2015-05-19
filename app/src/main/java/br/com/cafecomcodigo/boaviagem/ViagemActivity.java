@@ -115,8 +115,10 @@ public class ViagemActivity extends ActionBarActivity {
 
         ContentValues values = new ContentValues();
         values.put("destino", destino.getText().toString());
-        values.put("data_chegada", dataChegada.getTime());
-        values.put("data_saida", dataSaida.getTime());
+//        values.put("data_chegada", dataChegada.getTime());
+        values.put("data_chegada", 233949495l);
+//        values.put("data_saida", dataSaida.getTime());
+        values.put("data_saida", 233949495322l);
         values.put("orcamento", orcamento.getText().toString());
         values.put("quantidade_pessoas",
                 quantidadePessoas.getText().toString());
