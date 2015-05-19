@@ -27,6 +27,7 @@ public class LoginActivity extends ActionBarActivity {
         SharedPreferences preferencias = getPreferences(MODE_PRIVATE);
         boolean conectado =
                 preferencias.getBoolean(MANTER_CONECTADO, false);
+        manterConectado.setChecked(conectado);
         if(conectado){
             startActivity(new Intent(this, DashboardActivity.class));
         }
@@ -49,7 +50,7 @@ public class LoginActivity extends ActionBarActivity {
 
             startActivity(new Intent(this, DashboardActivity.class));
 
-        } else{
+        } else {
 
             String mensagemErro = getString(R.string.erro_autenticacao);
             Toast toast = Toast.makeText(this, mensagemErro,

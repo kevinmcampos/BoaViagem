@@ -45,6 +45,8 @@
     <string name="modo_viagem_sumario">Determina a viagem ativa com base na data atual</string>
     <string name="preferencias">Preferências</string>
     <string name="manter_conectado">Manter-se conectado</string>
+    <string name="registro_salvo">Registro salvo com sucesso.</string>
+    <string name="erro_salvar">Erro ao salvar registro.</string>
 
     <string-array name="categoria_gasto">
         <item>Alimentação</item>
