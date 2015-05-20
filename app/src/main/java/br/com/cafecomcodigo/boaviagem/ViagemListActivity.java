@@ -28,6 +28,7 @@ public class ViagemListActivity extends ListActivity implements AdapterView.OnIt
 
     private List<Map<String, Object>> viagens;
     private AlertDialog alertDialog;
+    private AlertDialog confirmDialog;
     private int viagemSelecionada;
     private DatabaseHelper databaseHelper;
     private SimpleDateFormat dateFormat;
@@ -56,7 +57,7 @@ public class ViagemListActivity extends ListActivity implements AdapterView.OnIt
         getListView().setOnItemClickListener(this);
 
         alertDialog = criaAlertDialog();
-        AlertDialog confirmacaoDialog = criaDialogConfirmacao();
+        confirmDialog = criaDialogConfirmacao();
     }
 
     private List<Map<String, Object>> listarViagens() {
@@ -110,7 +111,7 @@ public class ViagemListActivity extends ListActivity implements AdapterView.OnIt
     private double calcularTotalGasto(SQLiteDatabase db, String id) {
         Cursor cursor = db.rawQuery(
                 "SELECT SUM(valor) FROM gasto WHERE viagem_id = ?",
-                new String[]{ id });
+                new String[]{id});
         cursor.moveToFirst();
         double total = cursor.getDouble(0);
         cursor.close();
@@ -153,17 +154,24 @@ public class ViagemListActivity extends ListActivity implements AdapterView.OnIt
                 startActivity(new Intent(this, GastoListActivity.class));
                 break;
             case 3:
-                viagens.remove(this.viagemSelecionada);
-                getListView().invalidateViews();
+                confirmDialog.show();
                 break;
             case DialogInterface.BUTTON_POSITIVE:
                 viagens.remove(viagemSelecionada);
+                removerViagem(id);
                 getListView().invalidateViews();
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
-                criaDialogConfirmacao().dismiss();
+                confirmDialog.dismiss();
         }
 
+    }
+
+    private void removerViagem(String id) {
+        SQLiteDatabase db = databaseHelper.getWritableDatabase();
+        String where []  = new String[]{ id };
+        db.delete("gasto", "viagem_id = ?", where);
+        db.delete("viagem", "_id = ?", where);
     }
 
     private AlertDialog criaAlertDialog() {
