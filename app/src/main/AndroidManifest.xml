@@ -39,6 +39,9 @@
         <activity android:name=".ConfiguracoesActivity"
             android:label="@string/configuracoes" >
         </activity>
+        <provider
+            android:name=".provider.BoaViagemProvider"
+            android:authorities="br.com.casadocodigo.boaviagem.provider" />
     </application>
 
 </manifest>
